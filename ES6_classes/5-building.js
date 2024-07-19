@@ -1,10 +1,10 @@
 export default class Building {
-  constructor(sqrt) {
-    this._sqrt = sqrt;
+  constructor(sqft) {
+    this._sqft = sqft;
   }
 
-  get sqrt() {
-    return this._sqrt;
+  get sqft() {
+    return this._sqft;
   }
 
   // eslint-disable-next-line class-methods-use-this
