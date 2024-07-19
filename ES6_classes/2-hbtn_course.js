@@ -16,22 +16,22 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  get length() {
-    return this._length;
-  }
-
-  get students() {
-    return this._students;
-  }
-
   set name(name) {
     if (typeof (name) !== 'string') throw new Error();
     this._name = name;
   }
 
+  get length() {
+    return this._length;
+  }
+
   set length(length) {
     if (typeof (length) !== 'number') throw new Error();
     this._length = length;
+  }
+
+  get students() {
+    return this._students;
   }
 
   set students(students) {
