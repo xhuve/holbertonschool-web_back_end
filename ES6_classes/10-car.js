@@ -7,6 +7,6 @@ export default class Car {
 
   // eslint-disable-next-line class-methods-use-this
   cloneCar() {
-    return Symbol(Car());
+    return Symbol(Car);
   }
 }
