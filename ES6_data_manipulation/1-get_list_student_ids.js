@@ -4,5 +4,4 @@ module.exports =  function getListStudentIds(arr) {
         return []
 
     return arr.map((x) => x.id)
-
 }
