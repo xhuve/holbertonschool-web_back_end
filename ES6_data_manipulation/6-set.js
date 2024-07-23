@@ -1,3 +1,3 @@
 module.exports = function setFromArray(arr) {
-  return Set(arr);
+  return new Set(arr);
 };
