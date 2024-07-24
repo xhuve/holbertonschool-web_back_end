@@ -1,14 +1,9 @@
-import signUpUser from './4-user-promise';
-import uploadPhoto from './5-photo-reject';
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
+import signUpUser from './4-user-promise.js';
+import uploadPhoto from './5-photo-reject.js';
 
-const handleProfileSignup = async (firstName, lastName, fileName) => {
-  try {
-    const user = await signUpUser(firstName, lastName);
-    await uploadPhoto(fileName);
-    console.log(`${user.firstName} ${user.lastName}`);
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-export default handleProfileSignup;
+export default function handleProfileSignup(firstName, lastName, fileName) {
+  const result = Promise.allSettled([uploadPhoto(fileName), signUpUser(firstName, lastName)])
+  return result;
+}
