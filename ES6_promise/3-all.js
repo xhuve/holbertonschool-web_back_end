@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-const { uploadPhoto, createUser } = require('./utils');
+const uploadPhoto = require('./utils');
+const createUser = require('./utils');
 
 module.exports = async function handleProfileSignup() {
   try {
