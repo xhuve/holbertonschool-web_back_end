@@ -1,10 +1,7 @@
-module.exports = function handleResponseFromAPI(promise) {
+module.exports = async function handleResponseFromAPI(promise) {
   try {
-    promise.resolve();
-    return {
-      status: 200,
-      body: 'success',
-    };
+    const response = await promise.resolve();
+    return response;
   } catch (error) {
     return new Error();
   } finally {
