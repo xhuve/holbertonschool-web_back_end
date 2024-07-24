@@ -1,11 +1,8 @@
-module.exports = async function handleResponseFromAPI(promise) {
-  try {
-    const response = await promise.resolve();
-    return response;
-  } catch (error) {
-    return new Error();
-  } finally {
-    // eslint-disable-next-line no-console
+module.exports = function handleResponseFromAPI(promise) {
+  promise.then(() => ({
+    status: 200,
+    body: success,
+  })).catch(() => new Error()).finally(() => {
     console.log('Got a response from the API');
-  }
+  });
 };
