@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// eslint-disable-next-line import/extensions
 import { createUser, uploadPhoto } from './utils.js';
 
 export default async function handleProfileSignup() {
