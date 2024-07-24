@@ -1,13 +1,9 @@
-const uploadPhotos = require('./utils.js')
-const createUser = require('./utils.js')
-
-module.exports = function handleProfileSignup() {
-    try {
-        photo = uploadPhotos()
-        user = createUser()
-        console.log(photo, user)
-    } catch (error) {
-        console.log("Signup system offline")
-    }
-
-}
+module.exports = function handleResponseFromAPI(promise) {
+  promise.then(() => ({
+    status: 200,
+    body: 'success',
+  })).catch(() => new Error()).finally(() => {
+    // eslint-disable-next-line no-console
+    console.log('Got a response from the API');
+  });
+};
