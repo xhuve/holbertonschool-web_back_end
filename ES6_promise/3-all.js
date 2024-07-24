@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
-const uploadPhoto = require('./utils');
-const createUser = require('./utils');
+import { createUser, uploadPhoto } from './utils.js';
 
-module.exports = async function handleProfileSignup() {
+export default async function handleProfileSignup() {
   try {
     const photo = await uploadPhoto();
     const user = await createUser();
@@ -10,4 +9,4 @@ module.exports = async function handleProfileSignup() {
   } catch (error) {
     console.log('Signup system offline');
   }
-};
+}
