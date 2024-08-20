@@ -10,6 +10,6 @@ def make_multiplier(multiplier: float) -> Callable[[float], float]:
     function that adds 2 values
     '''
 
-    def function(multiplier, num):
+    def function(num):
         return multiplier * num
     return function
