@@ -4,9 +4,9 @@ strongly typed python
 '''
 
 
-def add(a: float, b: float) -> float:
+def concat(str1: str, str2: str) -> str:
     '''
-    function that adds 2 floats
+    function that adds 2 strings
     '''
 
-    return a + b
+    return str1 + str2
