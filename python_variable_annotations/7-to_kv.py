@@ -2,12 +2,13 @@
 '''
 strongly typed python
 '''
+import math
 from typing import List, Union
 
 
-def sum_mixed_list(input_list: List[Union[int, float]]) -> float:
+def to_kv(k: str, v: Union[int, float]) -> tuple:
     '''
     function that adds 2 values
     '''
 
-    return sum(input_list)
+    return (k, pow(v, 2))
