@@ -3,10 +3,10 @@
 strongly typed python
 '''
 import math
-from typing import List, Union
+from typing import Tuple, Union
 
 
-def to_kv(k: str, v: Union[int, float]) -> tuple:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[Union[str, float]]:
     '''
     function that adds 2 values
     '''
