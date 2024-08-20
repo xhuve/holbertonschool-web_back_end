@@ -3,10 +3,7 @@
 strongly typed python
 '''
 
-float_list = list[float, int]
-
-
-def sum_mixed_list(input_list: float_list) -> float:
+def sum_mixed_list(input_list: list[float, int]) -> float:
     '''
     function that adds 2 values
     '''
