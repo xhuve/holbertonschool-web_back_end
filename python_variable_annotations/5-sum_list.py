@@ -3,9 +3,12 @@
 strongly typed python
 '''
 
-type List = List[float]
+from typing import List
 
-def sum_list(input_list: List) -> float:
+
+float_list = List[float]
+
+def sum_list(input_list: float_list) -> float:
     '''
     function that adds 2 values
     '''
