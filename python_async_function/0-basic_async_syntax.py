@@ -5,7 +5,7 @@ async python
 import random
 import asyncio
 
-async def wait_random(max_delay=10):
+async def wait_random(max_delay: int = 10) -> int:
     '''
         basics of async
     '''
