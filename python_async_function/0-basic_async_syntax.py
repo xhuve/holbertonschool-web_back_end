@@ -5,6 +5,7 @@ async python
 import random
 import asyncio
 
+
 async def wait_random(max_delay: int = 10) -> float:
     '''
         basics of async
@@ -13,4 +14,3 @@ async def wait_random(max_delay: int = 10) -> float:
     await asyncio.sleep(delay_time)
 
     return delay_time
-
