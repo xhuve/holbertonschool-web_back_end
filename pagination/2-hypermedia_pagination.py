@@ -47,8 +47,12 @@ class Server:
         start, end = index_range(page, page_size)
         self.dataset()
         return self.__dataset[start:end]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+            A function that evaluates if the arguments are correct,
+            returns a dictionary of required data
+        """
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.__dataset) / page_size)
 
