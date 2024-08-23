@@ -8,7 +8,14 @@ index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """
+    Attributes:
+        DATA_FILE (str): The file path of the dataset.
+    Methods:
+        __init__(): Initializes the Server object.
+        dataset() -> List[List]: Returns the cached dataset.
+        get_page(page: int = 1, page_size: int = 10) -> List[List]: 
+    Returns a subset of the dataset based on the given page and page size.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
