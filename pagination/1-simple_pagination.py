@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-a python program that executes a simple pagination 
+a python program that executes a simple pagination
 """
 import csv
 from typing import List
@@ -16,7 +16,7 @@ class Server:
     Methods:
         __init__(): Initializes the Server object.
         dataset() -> List[List]: Returns the cached dataset.
-        get_page(page: int = 1, page_size: int = 10) -> List[List]: 
+        get_page(page: int = 1, page_size: int = 10) -> List[List]:
     Returns a subset of the dataset based on the given page and page size.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
