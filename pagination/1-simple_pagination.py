@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 import csv
-import math
 from typing import List
+
+""" a python program that executes a simple pagination  """
 
 index_range = __import__('0-simple_helper_function').index_range
 
@@ -25,9 +27,13 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert isinstance(page, int) and page > 0
-            assert isinstance(page_size, int) and page_size > 0
-            start, end = index_range(page, page_size)
-            self.dataset()
-            return self.__dataset[start:end]
-            
+        """
+            A function that evaluates if the arguments are correct,
+            creates the dataset and returns the required amount of
+            list elements
+        """
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
+        start, end = index_range(page, page_size)
+        self.dataset()
+        return self.__dataset[start:end]
