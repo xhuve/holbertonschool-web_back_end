@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+"""
+a python program that executes a simple pagination 
+"""
 import csv
 from typing import List
 
-""" a python program that executes a simple pagination  """
 
 index_range = __import__('0-simple_helper_function').index_range
 
