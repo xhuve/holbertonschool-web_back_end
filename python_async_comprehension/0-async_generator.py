@@ -8,7 +8,7 @@ from random import uniform
 from typing import Generator
 
 
-async def async_generator() -> Generator[float]:
+async def async_generator() -> Generator[float, any, any]:
     for _ in range(10):
         await asyncio.sleep(1)
         yield uniform(1, 10)
