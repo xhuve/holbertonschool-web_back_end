@@ -12,4 +12,4 @@ async def async_comprehension() -> List[float]:
     '''
         fuction that returns a random number per second
     '''
-    return [value for value in async_generator()]
+    return [value async for value in async_generator()]
