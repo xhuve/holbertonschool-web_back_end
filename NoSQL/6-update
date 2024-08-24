@@ -1,0 +1,2 @@
+// use or create database
+db.school.find({ name: "Holberton school" }).updateAll({ address: '972 Mission street' })
