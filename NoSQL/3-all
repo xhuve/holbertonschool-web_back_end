@@ -1,2 +1,2 @@
 // use or create database
-db.school.findAll()
+db.school.find()
