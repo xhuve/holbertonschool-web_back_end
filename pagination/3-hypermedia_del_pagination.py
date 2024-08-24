@@ -48,7 +48,7 @@ class Server:
         while index <= next_index:
             if (index in dataset.keys()):
                 data.append(dataset[index])
-
+            index += 1
 
         return {
             'index': index,
