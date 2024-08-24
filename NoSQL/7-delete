@@ -1,0 +1,5 @@
+// Use or create database
+db.school.deleteMany(
+    { name: "Holberton school" },
+);
+  
