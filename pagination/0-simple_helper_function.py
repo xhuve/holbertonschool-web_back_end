@@ -5,6 +5,7 @@ learning pagination through python
 
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int]:
     """
     a function that returns the index of
