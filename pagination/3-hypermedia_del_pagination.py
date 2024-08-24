@@ -40,6 +40,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """get certain data
+        """
         assert index <= 1000
         dataset = self.indexed_dataset()
         next_index = index + page_size
