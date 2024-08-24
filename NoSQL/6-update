@@ -1,2 +1,6 @@
-// use or create database
-db.school.updateMany({ name: "Holberton school" }, { $set: {address: '972 Mission street'} })
+// Use or create database
+db.school.updateMany(
+    { name: "Holberton school" }, 
+    { $set: { address: "972 Mission street" } }
+  );
+  
