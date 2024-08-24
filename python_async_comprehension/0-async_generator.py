@@ -8,7 +8,7 @@ from random import uniform
 from typing import Generator
 
 
-async def async_generator() -> Generator[float, any, any]:
+async def async_generator() -> Generator[float, None, None]:
     '''
         fuction that yields a random number per second
     '''
