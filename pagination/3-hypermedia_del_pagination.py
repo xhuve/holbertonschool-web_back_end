@@ -45,10 +45,9 @@ class Server:
         next_index = index + page_size
         data = []
 
-        while index <= next_index:
-            if (index in dataset.keys()):
-                data.append(dataset[index])
-            index += 1
+        for curr in range(index, next_index):
+            if (curr in dataset.keys()):
+                data.append(dataset[curr])
 
         return {
             'index': index,
