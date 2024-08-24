@@ -1,2 +1,2 @@
 // use or create database
-db.school.updateMany({ name: "Holberton school" }, { address: '972 Mission street' })
+db.school.find({ name: "Holberton school" }).updateMany({ address: '972 Mission street' })
