@@ -1,39 +1,40 @@
-const http = require('http');
-const url = require('url');
-const countStudents = require('./3-read_file_async');
+const http = require("http");
+const countStudents = require("./3-read_file_async");
+
+const HOSTNAME = "127.0.0.1";
+const PORT = 1245;
+const DATABASE = process.argv[2];
 
 const app = http.createServer(async (req, res) => {
-  const parsedUrl = url.parse(req.url, true);
-
-  if (parsedUrl.pathname === '/') {
-    res.end('Hello Holberton School!');
-  } else if (parsedUrl.pathname === '/students') {
+  if (req.url === "/") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Hello Holberton School!");
+  } else if (req.url === "/students") {
+    res.write("This is the list of our students\n");
     try {
-      const databaseFile = process.argv[2] || 'database.csv'; 
-      let consoleOutput = ''; 
-      const originalConsoleLog = console.log;
-      console.log = (message) => {
-        consoleOutput += `${message}\n`; 
-      };
-
-      await countStudents(databaseFile); 
-
-      consoleOutput = consoleOutput.trim(); 
-
-      console.log = originalConsoleLog; 
-
-      res.end(`This is the list of our students\n${consoleOutput}`);
+      const { students, csStudents, sweStudents } = await countStudents(
+        DATABASE
+      );
+      res.write(`Number of students: ${students.length}\n`);
+      res.write(
+        `Number of students in CS: ${
+          csStudents.length
+        }. List: ${csStudents.join(", ")}\n`
+      );
+      res.write(
+        `Number of students in SWE: ${
+          sweStudents.length
+        }. List: ${sweStudents.join(", ")}`
+      );
+      res.end();
     } catch (error) {
-      
-      res.statusCode = 400;
-      res.end(`This is the list of our students\n${error.message}`);
+      res.end(error.message);
     }
   } else {
-    res.statusCode = 404;
-    res.end('Not Found\n');
+    res.writeHead(404);
+    res.end("Invalid request");
   }
 });
 
-app.listen(1245); 
-
+app.listen(PORT, HOSTNAME);
 module.exports = app;
